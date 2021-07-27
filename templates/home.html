@@ -1,0 +1,33 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Home</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Homepage</h1>#}
+{#</body>#}
+{#</html>#}
+
+{% extends 'base.html' %}
+
+{% block content %}
+{#<h1>Homepage</h1>#}
+    <h1>Message board homepage</h1>
+    <ul>
+{#        {% for post in object_list %}#}
+{#            <li>{{ post.text }}</li>#}
+{#        {% endfor %}#}
+{#    {% for post in all_posts_list %}#}
+{#        <li>{{ post.text }}</li>#}
+{#    {% endfor %}#}
+
+    {% for post in object_list %}
+        <div class="post-entry">
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.body }}</p>
+        </div>
+    {% endfor %}
+    </ul>
+
+{% endblock content %}
